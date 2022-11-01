@@ -37,6 +37,16 @@ object Build : BuildType({
         root(DslContext.settingsRoot)
     }
 
+    steps{
+        maven{
+            val myMavenGoal="clean test"
+            goals=myMavenGoal
+            runnersArgs="-Dmaven.text.failure.ignore=true"
+
+        }
+
+    }
+
     triggers {
         vcs {
         }
