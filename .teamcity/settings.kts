@@ -1,4 +1,5 @@
 import jetbrains.buildServer.configs.kotlin.*
+import jetbrains.buildServer.configs.kotlin.triggers.VcsTrigger
 import jetbrains.buildServer.configs.kotlin.triggers.vcs
 
 /*
@@ -39,6 +40,8 @@ object Build : BuildType({
 
     triggers {
         vcs {
+            quietPeriodMode = VcsTrigger.QuietPeriodMode.USE_CUSTOM
+            quietPeriod = 30
         }
     }
 })
